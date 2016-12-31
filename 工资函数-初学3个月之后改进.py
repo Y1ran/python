@@ -46,3 +46,34 @@ def pay_rate():
         print "Please enter a number"
 
 print str(pay_rate())
+
+#方法三
+
+#user_
+#coder Wang_yiran
+
+
+hrs = raw_input("Enter your hours:")
+rate = raw_input("Enter your rates:")
+
+rate = float(rate)
+
+def computepay():
+    try:
+        h = float(hrs)
+        if h < 0 and len(str(h)) > 0:
+            print "Please enter a valid number(>0)"
+            
+        elif h >= 0 and h <= 40:
+            pay_rate = h * rate
+            
+        elif h > 40:
+            h = float(hrs)
+            pay_rate = rate * 1.5 * (h - 40) + 40 * rate
+            
+        return pay_rate
+    
+    except:
+        print " Please enter a number:"
+
+print str(computepay())
