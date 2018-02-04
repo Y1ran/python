@@ -136,7 +136,16 @@ class Llist:
         p = self._head        #迭代器，自动返回非空链表的所有元素  
         while p is not None:  
             yield p.value  
-            p = p.next_          
+            p = p.next_         
+    #反转链表
+    def reverse(self):
+        temp = None
+        while self._head is not None:
+            p = self._head
+            self._head = p._next  #取下原节点
+            p._next = temp
+            temp = p
+        self._head = temp
           
 #实例化  
 Ins1 = Llist()  
@@ -146,6 +155,10 @@ for i in range(11,20):
     Ins1.append(i)      #将11到19依次从表末插入链表（顺序）  
 Ins1.printall()   
   
-  
-for i in Ins1.elements():   #利用迭代器的for循环使用更简单  
+Re_Ins = Ins1.reverse()
+for i in Re_Ins.elements():   #利用迭代器的for循环使用更简单  
     print(i)  
+
+
+
+    
