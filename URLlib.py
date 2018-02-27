@@ -7,7 +7,7 @@ Created on Sun Feb 04 21:44:14 2018
 
 #从网页解码数据
 
-import requests, urllib
+from urllib.request import urlopen
 
 fhand = urllib.requests.urlopen("http://www.baidu.com")
 
